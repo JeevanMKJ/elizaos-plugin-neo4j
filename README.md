@@ -2,51 +2,71 @@
 
 This plugin allows Eliza to query and interact with Giveth projects stored in a Neo4j database through a REST API.
 
+[Giveth](https://giveth.io/) is a platform that empowers changemakers to accept crypto donations for nonprofit projects and social causes.
+
 ## Features
 
--   Query Giveth projects using natural language
--   Get detailed information about specific projects
--   List recent projects
--   Secure API communication with authentication
+- Query Giveth projects using natural language
+- Get detailed information about specific projects
+- List recent projects
+- Secure API communication with authentication
 
 ## Installation
 
 ### From Package
 
-```bash
-npx elizaos plugins add @elizaos/plugin-neo4j
-```
+----This plugin should be available soon with Eliza.----
 
 ### Manual Installation
 
-1. Clone this repository
+1. Add repository directly into ~/eliza/packages
+
+   ```bash
+    pnpm add github:JeevanMKJ/elizaos-plugin-neo4j
+   ```
+
 2. Install dependencies:
-    ```bash
-    pnpm install
-    ```
+   ```bash
+   pnpm install
+   ```
 3. Build the plugin:
-    ```bash
-    pnpm build
-    ```
+   ```bash
+   pnpm build
+   ```
 
 ## Configuration
+
+To configure the Neo4j plugin for Giveth, you need to:
+
+1. Add the plugin to your character file
+2. Set up your Giveth Neo4j access (API key and URL)
+3. Obtain a Giveth API key (see section below)
 
 Add the Neo4j plugin to your character file:
 
 ```json
 {
-    "name": "Your Eliza Character",
-    "plugins": ["@elizaos/plugin-neo4j"],
-    "settings": {
-        "secrets": {
-            "neo4j": {
-                "apiKey": "YOUR_API_KEY",
-                "apiUrl": "https://api.giveth.io/neo4j"
-            }
-        }
+  "name": "Your Eliza Character",
+  "plugins": ["@elizaos/plugin-neo4j"],
+  "settings": {
+    "secrets": {
+      "neo4j": {
+        "apiKey": "YOUR_API_KEY",
+        "apiUrl": "https://api.giveth.io/neo4j"
+      }
     }
+  }
 }
 ```
+
+### Obtaining a Giveth API Key
+
+The Giveth Neo4j API is not publicly available through a self-service process. To obtain an API key:
+
+1. Visit the [Giveth website](https://giveth.io/)
+2. Connect with the Giveth team via email info@giveth.io.
+3. Explain your use case and request access to the Neo4j API
+4. Once approved, you'll receive an API key to use with this plugin
 
 ## Usage
 
@@ -91,24 +111,8 @@ Eliza: _Uses getRecentGivethProjects to list recent projects_
 
 ### Project Structure
 
--   `/src/actions` - Actions for Eliza to query Neo4j
--   `/src/providers` - API communication with the Neo4j server
--   `/src/types.ts` - TypeScript type definitions
--   `/src/environment.ts` - Configuration management
--   `/src/index.ts` - Plugin entry point
-
-### Building
-
-```bash
-pnpm build
-```
-
-### Testing
-
-```bash
-pnpm test
-```
-
-## Security
-
-This plugin securely stores and manages the Neo4j API key, including it in all requests to the API.
+- `/src/actions` - Actions for Eliza to query Neo4j
+- `/src/providers` - API communication with the Neo4j server
+- `/src/types.ts` - TypeScript type definitions
+- `/src/environment.ts` - Configuration management
+- `/src/index.ts` - Plugin entry point
