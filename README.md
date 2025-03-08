@@ -42,6 +42,8 @@ To configure the Neo4j plugin for Giveth, you need to:
 2. Set up your Giveth Neo4j access (API key and URL)
 3. Obtain a Giveth API key (see section below)
 
+### Method 1: Character File Configuration
+
 Add the Neo4j plugin to your character file:
 
 ```json
@@ -58,6 +60,24 @@ Add the Neo4j plugin to your character file:
   }
 }
 ```
+
+### Method 2: Environment Variables
+
+You can also configure the plugin using environment variables in a `.env` file in the root directory of Eliza:
+
+```
+# Neo4j Configuration
+NEO4J_API_KEY=your_api_key_here
+NEO4J_API_URL=https://api.giveth.io/neo4j
+```
+
+If you don't have a `.env` file set up yet, you can create one easily by copying the example file:
+
+```bash
+cp .env.example .env
+```
+
+Then edit the `.env` file to add your API key and URL.
 
 ### Obtaining a Giveth API Key
 
