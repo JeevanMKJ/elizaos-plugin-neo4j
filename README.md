@@ -25,6 +25,18 @@ This plugin allows Eliza to query and interact with Giveth projects stored in a 
     pnpm add github:JeevanMKJ/elizaos-plugin-neo4j
    ```
 
+   When running this command you might get this error:
+
+   ```bash
+   ERR_PNPM_ADDING_TO_ROOT  Running this command will add the dependency to the workspace root, which might not be what you want - if you really meant it, make it explicit by running this command again with the -w flag (or --workspace-root). If you don't want to see this warning anymore, you may set the ignore-workspace-root-check setting to true.
+   ```
+
+   Run the same command with the -w flag:
+
+   ```bash
+   pnpm add github:JeevanMKJ/elizaos-plugin-neo4j -w
+   ```
+
 2. Install dependencies:
    ```bash
    pnpm install
